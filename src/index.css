@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cinzel", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  --color-brand-gold: #c3a372;
+  --color-brand-gold-dark: #a8885a;
+  --color-brand-dark: #222222;
+  --color-brand-gray: #4b4b4b;
+  --color-brand-light: #fdfcf9;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-light);
+  color: var(--color-brand-dark);
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Custom styles for Islamic pattern background */
+.bg-islamic-pattern {
+  background-color: #fdfdfc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L60 35 L95 20 L75 45 L95 70 L65 60 L50 95 L35 60 L5 70 L25 45 L5 20 L40 35 Z' fill='%23e3d2be' fill-opacity='0.25'/%3E%3Cg opacity='0.15'%3E%3Cpath d='M0 50 L50 0 L100 50 L50 100 Z' fill='none' stroke='%23d6bd96' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+}
