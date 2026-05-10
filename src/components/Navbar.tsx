@@ -34,6 +34,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  const navTextColor = isScrolled || isHomePage ? 'text-brand-dark' : 'text-white';
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -57,7 +59,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className="font-serif text-lg sm:text-xl tracking-widest text-brand-dark flex-shrink-0"
+            className={`font-serif text-lg sm:text-xl tracking-widest flex-shrink-0 transition-colors duration-300 ${navTextColor}`}
           >
             MOHAMMAD MUKHLISUR RAHMAN
           </Link>
@@ -73,7 +75,7 @@ export default function Navbar() {
               >
                 <Link
                   to={link.href}
-                  className="text-xs font-semibold tracking-wide flex items-center gap-1 text-brand-dark hover:text-brand-gold transition-colors"
+                  className={`text-xs font-semibold tracking-wide flex items-center gap-1 hover:text-brand-gold transition-colors duration-300 ${navTextColor}`}
                 >
                   {link.label}
                   {link.dropdown && <ChevronDown className="w-3 h-3" />}
@@ -107,16 +109,16 @@ export default function Navbar() {
 
           {/* Social Icons */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="#" className="text-brand-dark hover:text-brand-gold transition-colors"><Facebook className="w-4 h-4" /></a>
-            <a href="#" className="text-brand-dark hover:text-brand-gold transition-colors"><Twitter className="w-4 h-4" /></a>
-            <a href="#" className="text-brand-dark hover:text-brand-gold transition-colors"><Youtube className="w-4 h-4" /></a>
-            <a href="#" className="text-brand-dark hover:text-brand-gold transition-colors"><Instagram className="w-4 h-4" /></a>
+            <a href="#" className={`hover:text-brand-gold transition-colors duration-300 ${navTextColor}`}><Facebook className="w-4 h-4" /></a>
+            <a href="#" className={`hover:text-brand-gold transition-colors duration-300 ${navTextColor}`}><Twitter className="w-4 h-4" /></a>
+            <a href="#" className={`hover:text-brand-gold transition-colors duration-300 ${navTextColor}`}><Youtube className="w-4 h-4" /></a>
+            <a href="#" className={`hover:text-brand-gold transition-colors duration-300 ${navTextColor}`}><Instagram className="w-4 h-4" /></a>
           </div>
 
           {/* Mobile Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-brand-dark hover:text-brand-gold focus:outline-none"
+            className={`lg:hidden hover:text-brand-gold focus:outline-none transition-colors duration-300 ${navTextColor}`}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
